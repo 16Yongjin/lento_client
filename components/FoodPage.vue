@@ -12,7 +12,7 @@ v-container(grid-list-md)
           v-card-title.title 사진  {{ hasPhoto ? `${photoIdx + 1} / ${food.images.length}` : '' }}
             v-spacer
             photo-upload(:id="food._id" :name="food.name")
-          v-card-media(v-if="hasPhoto" :height="imageHeight" :src="`http://localhost:3000/public/images/${food.images[photoIdx]}`")
+          v-card-media(v-if="hasPhoto" :height="imageHeight" :src="`https://api.lento.in/public/images/${food.images[photoIdx]}`")
             div.middle
               v-btn(@click="previousPhoto" icon color="blue-grey lighten-3" left absolute)
                 v-icon(large) keyboard_arrow_left

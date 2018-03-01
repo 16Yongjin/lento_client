@@ -28,8 +28,6 @@ v-dialog(v-model="dialog"  max-width="600px")
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   props: ['id', 'name'],
   data () {
@@ -72,8 +70,7 @@ export default {
       for (let i = 0; i < this.images.length; i++) {
         formData.append('image', this.images[i])
       }
-      const server = 'http://localhost:3000/public/images/'
-      axios.post(server, formData, {
+      this.$axios.$post('/public/images/', formData, {
         onUploadProgress (e) {
           this.progress = (e.loaded / e.total) * 100
         }
