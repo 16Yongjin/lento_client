@@ -39,6 +39,11 @@ export default {
       agree: false
     }
   },
+  watch: {
+    id () {
+      this.reset()
+    }
+  },
   methods: {
     onImageSelected (event) {
       if (event.target.files.length === 0) return
@@ -76,12 +81,16 @@ export default {
         }
       }).then(res => {
         alert('감사합니다!')
-        this.dialog = false
-        this.images = null
-        this.imageUrls = null
-        this.progress = null
-        this.agree = false
+        this.reset()
       })
+    },
+    reset () {
+      this.dialog = false
+      this.images = null
+      this.imageUrls = null
+      this.progress = null
+      this.agree = false
+      this.$refs.fileInput.value = ''
     }
   }
 
