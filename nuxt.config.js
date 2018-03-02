@@ -1,3 +1,5 @@
+const nodeExternals = require('webpack-node-externals')
+const resolve = (dir) => require('path').join(__dirname, dir) // eslint-disable-line
 
 module.exports = {
   /*
@@ -36,14 +38,17 @@ module.exports = {
     ],
     extractCSS: true,
     babel: {
-      presets: [
-        'es2015',
-        'stage-0'
-      ],
+      presets: ['es2015', 'stage-0'],
       plugins: [
         ['transform-runtime', {
           polyfill: true,
           regenerator: true
+        }],
+        ['transform-imports', {
+          'vuetify': {
+            'transform': 'vuetify/es5/components/${member}', // eslint-disable-line
+            'preventFullImport': true
+          }
         }]
       ]
     },
@@ -58,6 +63,13 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }
+      if (ctx.isServer) {
+        config.externals = [
+          nodeExternals({
+            whitelist: [/^vuetify/]
+          })
+        ]
       }
     }
   }
