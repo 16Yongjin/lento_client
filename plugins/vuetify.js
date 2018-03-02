@@ -10,7 +10,7 @@ import {
   VGrid,
   VToolbar,
   VDialog,
-  VCheckBox
+  VCheckbox
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -24,6 +24,6 @@ Vue.use(Vuetify, {
     VGrid,
     VToolbar,
     VDialog,
-    VCheckBox
+    VCheckbox
   }
 })
