@@ -11,7 +11,6 @@ import {
   VToolbar,
   VDialog,
   VCheckbox,
-  VTabs,
   VBottomNav
 } from 'vuetify'
 
@@ -27,7 +26,6 @@ Vue.use(Vuetify, {
     VToolbar,
     VDialog,
     VCheckbox,
-    VTabs,
     VBottomNav
   },
   theme: {
