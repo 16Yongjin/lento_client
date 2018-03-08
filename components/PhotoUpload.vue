@@ -22,9 +22,6 @@ v-dialog(v-model="dialog"  max-width="600px")
     v-card-actions
       v-spacer
       v-btn(@click="onUpload" :disabled="!imageUrls || !agree || progress" flat) 업로드
-
-
-
 </template>
 
 <script>

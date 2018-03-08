@@ -10,7 +10,9 @@ import {
   VGrid,
   VToolbar,
   VDialog,
-  VCheckbox
+  VCheckbox,
+  VTabs,
+  VBottomNav
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -24,6 +26,17 @@ Vue.use(Vuetify, {
     VGrid,
     VToolbar,
     VDialog,
-    VCheckbox
+    VCheckbox,
+    VTabs,
+    VBottomNav
+  },
+  theme: {
+    primary: '#90CAF9',
+    secondary: '#BBDEFB',
+    accent: '#7986CB',
+    error: '#DD2C00',
+    warning: '#FFEB3B',
+    info: '#2196f3',
+    success: '#4caf50'
   }
 })

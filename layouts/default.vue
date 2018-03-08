@@ -14,6 +14,7 @@ v-app(:dark="dark")
     v-btn(flat icon @click="$store.commit('switchDark')")
       v-icon {{ dark ? 'brightness_7' : 'brightness_3' }}
 
+
   v-content
     nuxt
 
@@ -22,11 +23,13 @@ v-app(:dark="dark")
 <script>
   export default {
     data () {
+      console.log(this.$route.name)
       return {
         clipped: false,
         drawer: false,
         items: [
-          { icon: 'apps', title: '랜덤', to: '/random' }
+          { icon: 'apps', title: '랜덤', to: '/random' },
+          { icon: 'school', title: '학식', to: '/cafeteria' }
         ],
         miniVariant: false
       }
