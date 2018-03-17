@@ -3,30 +3,26 @@ import {
   Vuetify,
   VApp,
   VCard,
-  VNavigationDrawer,
-  VList,
   VBtn,
   VIcon,
   VGrid,
   VToolbar,
   VDialog,
   VCheckbox,
-  VBottomNav
+  VDivider
 } from 'vuetify'
 
 Vue.use(Vuetify, {
   components: {
     VApp,
     VCard,
-    VNavigationDrawer,
-    VList,
     VBtn,
     VIcon,
     VGrid,
     VToolbar,
     VDialog,
     VCheckbox,
-    VBottomNav
+    VDivider
   },
   theme: {
     primary: '#90CAF9',

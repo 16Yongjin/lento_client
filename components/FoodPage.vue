@@ -19,7 +19,7 @@ v-container(grid-list-md)
             div.middle
               v-btn(@click="nextPhoto" icon color="blue-grey lighten-3" right absolute)
                 v-icon(large) keyboard_arrow_right
-          v-card-text(v-else) 사진 좀 올려주세요 ㅜㅠ 
+          v-card-text(v-else) 사진 좀 올려주세요 🍣🍕 
 
 
       v-flex(md8 sm10 xs12 v-if="food.time")

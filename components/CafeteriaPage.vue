@@ -5,7 +5,7 @@ v-container(grid-list-md)
       v-card
         v-card-title(primary-title)
           div
-            div.headline 인문관
+            div.headline 인문관 {{ cafeteria.time }}
             div(v-text="cafeteria.inmun.day")
 
     v-flex(md8 sm10 xs12 v-for="(menu, i) in cafeteria.inmun.menus" :key="'inmun'+i")
@@ -17,7 +17,7 @@ v-container(grid-list-md)
       v-card
         v-card-title(primary-title)
           div
-            div.headline 교수회관
+            div.headline 교수회관 {{ cafeteria.time }}
             div(v-text="cafeteria.kyosu.day")
 
     v-flex(md8 sm10 xs12 v-for="(menu, i) in cafeteria.kyosu.menus" :key="'kyosu' + i")

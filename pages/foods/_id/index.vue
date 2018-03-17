@@ -15,6 +15,9 @@ export default {
     } catch (e) {
       error({ statusCode: 404, message: '식당이 없어요.' })
     }
+  },
+  mounted () {
+    this.$store.dispatch('setTitle')
   }
 }
 </script>

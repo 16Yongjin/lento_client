@@ -1,7 +1,8 @@
 export const state = () => ({
   sidebar: false,
-  dark: false,
-  title: '외대 주변 식당'
+  dark: (new Date()).getHours() >= 17,
+  title: '외대 주변 식당',
+  mainFoods: []
 })
 
 export const mutations = {
@@ -13,6 +14,15 @@ export const mutations = {
   },
   switchDark (state) {
     state.dark = !state.dark
+  },
+  setMainFoods (state, foods) {
+    state.mainFoods = foods
+  }
+}
+
+export const getters = {
+  mainFoods ({ mainFoods }) {
+    return mainFoods
   }
 }
 

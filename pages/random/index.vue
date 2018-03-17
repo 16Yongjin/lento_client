@@ -2,7 +2,7 @@
 div
   FoodPage(:food="food")
   v-btn(fixed fab bottom right color="orange" @click="reload")
-    v-icon replay
+    v-icon(color="white") replay
 
 </template>
 
@@ -20,6 +20,9 @@ export default {
     async reload () {
       this.food = await this.$axios.$get('/public/foods/random')
     }
+  },
+  mounted () {
+    this.$store.dispatch('setTitle', '랜덤')
   }
 }
 </script>
