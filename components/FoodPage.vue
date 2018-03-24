@@ -8,10 +8,11 @@ v-container(grid-list-md)
               div.headline(v-text="food.name")
               div(v-text="food.type")
       v-flex(md8 sm10 xs12) 
-        v-card.pb-1
-          v-card-title.title 사진  {{ hasPhoto ? `${photoIdx + 1} / ${food.images.length}` : '' }}
+        v-card.pb-0
+          v-card-title.title 사진 {{ hasPhoto ? `${photoIdx + 1} / ${food.images.length}` : '' }}
             v-spacer
             photo-upload(:id="food._id" :name="food.name")
+
           v-card-media(v-if="hasPhoto" :height="imageHeight" :src="`https://api.lento.in/public/images/${food.images[photoIdx]}`")
             div.middle
               v-btn(@click="previousPhoto" icon color="blue-grey lighten-3" left absolute)
@@ -19,7 +20,9 @@ v-container(grid-list-md)
             div.middle
               v-btn(@click="nextPhoto" icon color="blue-grey lighten-3" right absolute)
                 v-icon(large) keyboard_arrow_right
-          v-card-text(v-else) 사진 좀 올려주세요 🍣🍕 
+          v-card-text(v-if="food.sensei").title 출처 - 
+            a(v-if="food.sensei" :href="food.sensei" target="_blank") 외밥최선생
+            
 
 
       v-flex(md8 sm10 xs12 v-if="food.time")
@@ -45,6 +48,7 @@ v-container(grid-list-md)
               gmap-marker(:position="{ lat:food.lat, lng: food.lng }")
               gmap-info-window(:position="{ lat:food.lat, lng: food.lng }") 
                 h3(style="color: black;") {{ food.name }}
+          
 </template>
 
 <script>
@@ -69,6 +73,11 @@ export default {
     return {
       moreMenu: false,
       photoIdx: 0
+    }
+  },
+  watch: {
+    food () {
+      this.photoIdx = 0
     }
   },
   methods: {
@@ -101,7 +110,10 @@ export default {
   transform: translateY(50%)
 }
 
-.lines {
-  white-space: pre-line
-}
+.lines { white-space: pre-line; }
+
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; }
+
 </style>
