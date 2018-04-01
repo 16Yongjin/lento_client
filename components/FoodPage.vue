@@ -22,8 +22,12 @@ v-container(grid-list-md)
                 v-icon(large) keyboard_arrow_right
           v-card-text(v-if="food.sensei").title 출처 - 
             a(v-if="food.sensei" :href="food.sensei" target="_blank") 외밥최선생
-            
-
+      v-flex(md8 sm10 xs12 v-if="food.honbab")
+        v-card
+          v-card-title.title 
+            span.mr-2 혼밥슐랭 {{ `${food.honbab}스타` }}
+            v-icon(v-for="i in 5" :key="i" :color="i <= food.honbab ? 'yellow' : 'grey'") star
+          v-card-text(v-if="food.honmono") {{ food.honmono }}
 
       v-flex(md8 sm10 xs12 v-if="food.time")
         v-card
