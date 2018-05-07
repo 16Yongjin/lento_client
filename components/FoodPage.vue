@@ -69,7 +69,7 @@ export default {
       meta: [
         { hid: 'og-title', property: 'og:title', content: food.name },
         { hid: 'og-description', property: 'og:description', content: food.type },
-        { hid: 'og-image', property: 'og:image', content: mapImage(food) }
+        { hid: 'og-image', property: 'og:image', content: this.hasPhoto ? `https://api.lento.in/public/images/${this.hasPhoto}` : mapImage(food) }
       ]
     }
   },
