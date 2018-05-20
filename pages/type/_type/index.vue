@@ -2,7 +2,7 @@
 v-container(grid-list-lg)
   v-layout(row wrap)
     food-card(v-for="food in foodList" :food="food" :key="food.name")
-  infinite-loading(@infinite="infiniteHandler")
+  infinite-loading(ref="infiniteLoading" @infinite="infiniteHandler")
       span(slot="no-results") 식당이 없어요.
       span(slot="no-more") 끝 :)
 </template>
@@ -62,6 +62,7 @@ export default {
     if (this.foodList.length && this.foods[0].name !== this.foodList[0].name) {
       console.log('different food type')
       this.foodList = []
+      this.$refs.infiniteLoading.$emit('$InfiniteLoading:reset')
     }
   },
   components: {
