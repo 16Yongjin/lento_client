@@ -23,9 +23,4 @@ export default {
 </script>
 
 <style scoped>
-.middle {
-  width: 100%;
-  transform: translateY(50%)
-}
-
 </style>

@@ -2,7 +2,9 @@ export const state = () => ({
   sidebar: false,
   dark: (new Date()).getHours() >= 17,
   title: '외대 주변 식당',
-  mainFoods: []
+  mainFoods: [],
+  foodTypes: {},
+  typedFoodList: []
 })
 
 export const mutations = {
@@ -17,12 +19,23 @@ export const mutations = {
   },
   setMainFoods (state, foods) {
     state.mainFoods = foods
+  },
+  setFoodTypes (state, { type, foods }) {
+    state.foodTypes[type] = foods
+  },
+  setTypedFoodList (state, foods) {
+    state.typedFoodList = foods
   }
 }
-
 export const getters = {
   mainFoods ({ mainFoods }) {
     return mainFoods
+  },
+  foodTypes ({ foodTypes }) {
+    return foodTypes
+  },
+  typedFoodList ({ typedFoodList }) {
+    return typedFoodList
   }
 }
 

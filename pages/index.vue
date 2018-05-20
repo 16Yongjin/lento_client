@@ -2,10 +2,13 @@
   v-container(grid-list-lg)
     v-layout(row wrap)
       v-flex(xs12)
-        h3.display-3 외대 주변 식당
+        h3.display-2.keep-line
+          | 한국외대 😋
+          | 주변식당 🍽
         v-divider.my-3
-      v-flex(md6 xs12 v-for="food in foods" :key="food._id")
-        food-card(:food="food")
+      v-flex(xs12)
+        h2 음식종류
+      food-type-card(v-for="food in foods" :food="food" :key="food[1]")
       v-flex(xs12)
         v-card(to="/random")
           v-card-text.text-xs-center.display-1(flat) 더보기
@@ -15,10 +18,11 @@
 </template>
 
 <script>
-import FoodCard from '@/components/FoodCard'
+import FoodTypeCard from '@/components/FoodTypeCard'
+
 export default {
   components: {
-    FoodCard
+    FoodTypeCard
   },
   async asyncData ({ app, params, error, store }) {
     try {
@@ -32,7 +36,12 @@ export default {
   },
   computed: {
     foods () {
-      return this.$store.getters.mainFoods
+      return [ [ '🍚 한식', 'b82nalfx21n.jpeg', 74 ],
+        [ '🍝 양식', 'xs4lleaqxe.jpg', 30 ],
+        [ '🍣 일식', 'qqh0cna7led.jpg', 12 ],
+        [ '🍜 분식', 'w0irrvhgyds.jpeg', 10 ],
+        [ '🍲 중식', 'cfj00zr72f.jpeg', 9 ],
+        [ '🍗 치킨', '1ewpx6xhbr1.jpeg', 6 ] ]
     }
   },
   mounted () {
@@ -42,5 +51,9 @@ export default {
 </script>
 
 <style scoped>
+.keep-line {
+  word-break: keep-all;
+  white-space: pre;
+}
 
 </style>
