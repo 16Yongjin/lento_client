@@ -42,11 +42,11 @@ export default {
     infiniteHandler ($state) {
       const foodLen = this.foods.length
       const len = this.foodList.length
-
       if (foodLen <= len) {
         console.log('complete')
         return $state.complete()
       }
+
       const temp = []
       for (let i = len; i < foodLen && i < len + 12; i++) {
         temp.push(this.foods[i])
