@@ -2,13 +2,12 @@
 v-container(grid-list-lg)
   v-layout(row wrap)
     food-card(v-for="food in foodList" :food="food" :key="food.name")
-  infinite-loading(ref="infiniteLoading" :distance="150" spinner="waveDots" @infinite="infiniteHandler")
-      span(slot="no-results") 식당이 없어요.
-      span(slot="no-more") 끝 :)
+    infinite-loading(ref="infiniteLoading" @infinite="infiniteHandler")
+        span(slot="no-results") 식당이 없어요.
+        span(slot="no-more") 끝 :)
 </template>
 
 <script>
-import Vue from 'vue'
 import InfiniteLoading from 'vue-infinite-loading/src/components/InfiniteLoading.vue'
 import FoodCard from '@/components/FoodCard'
 
@@ -47,17 +46,13 @@ export default {
         console.log('complete')
         return $state.complete()
       }
+      const temp = []
+      for (let i = len; i < foodLen && i < len + 12; i++) {
+        temp.push(this.foods[i])
+      }
+      this.foodList = this.foodList.concat(temp)
 
-      setTimeout(() => {
-        const temp = []
-        for (let i = len; i < foodLen && i < len + 12; i++) {
-          temp.push(this.foods[i])
-        }
-        this.foodList = this.foodList.concat(temp)
-        Vue.nextTick(() => {
-          $state.loaded()
-        })
-      }, 200)
+      $state.loaded()
     }
   },
   mounted () {
