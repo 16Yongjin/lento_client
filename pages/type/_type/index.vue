@@ -48,14 +48,16 @@ export default {
         return $state.complete()
       }
 
-      const temp = []
-      for (let i = len; i < foodLen && i < len + 12; i++) {
-        temp.push(this.foods[i])
-      }
-      this.foodList = this.foodList.concat(temp)
-      Vue.nextTick(() => {
-        $state.loaded()
-      })
+      setTimeout(() => {
+        const temp = []
+        for (let i = len; i < foodLen && i < len + 12; i++) {
+          temp.push(this.foods[i])
+        }
+        this.foodList = this.foodList.concat(temp)
+        Vue.nextTick(() => {
+          $state.loaded()
+        })
+      }, 200)
     }
   },
   mounted () {
