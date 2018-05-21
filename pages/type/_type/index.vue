@@ -2,7 +2,7 @@
 v-container(grid-list-lg)
   v-layout(row wrap)
     food-card(v-for="food in foodList" :food="food" :key="food.name")
-  infinite-loading(ref="infiniteLoading" @infinite="infiniteHandler")
+  infinite-loading(ref="infiniteLoading" :distance="150" spinner="waveDots" @infinite="infiniteHandler")
       span(slot="no-results") 식당이 없어요.
       span(slot="no-more") 끝 :)
 </template>
