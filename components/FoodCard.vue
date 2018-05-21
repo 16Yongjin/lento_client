@@ -13,9 +13,7 @@ export default {
   props: ['food'],
   computed: {
     cardHeight () {
-      switch (this.$vuetify.breakpoint.name) {
-        case 'md': case 'lg': case 'xl': return '100%'
-      }
+      return this.$vuetify.breakpoint.name === 'xs' ? null : '100%'
     },
     image () {
       return this.food.images && this.food.images[0]
