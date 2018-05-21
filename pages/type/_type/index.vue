@@ -8,6 +8,7 @@ v-container(grid-list-lg)
 </template>
 
 <script>
+import Vue from 'vue'
 import InfiniteLoading from 'vue-infinite-loading/src/components/InfiniteLoading.vue'
 import FoodCard from '@/components/FoodCard'
 
@@ -47,14 +48,14 @@ export default {
         return $state.complete()
       }
 
-      setTimeout(() => {
-        const temp = []
-        for (let i = len; i < foodLen && i < len + 12; i++) {
-          temp.push(this.foods[i])
-        }
-        this.foodList = this.foodList.concat(temp)
+      const temp = []
+      for (let i = len; i < foodLen && i < len + 12; i++) {
+        temp.push(this.foods[i])
+      }
+      this.foodList = this.foodList.concat(temp)
+      Vue.nextTick(() => {
         $state.loaded()
-      }, 200)
+      })
     }
   },
   mounted () {
