@@ -6,11 +6,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: '외대 주변 식당',
+    title: '한국외대 주변 식당',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '한국외대 주변 식당과 학식 정보를 확인할 수 있어요.' }
+      { hid: 'description', name: 'description', content: '한국외대 주변 맛집 메뉴, 음식 사진, 위치 정보. 인문관 & 교수회관 중식, 석식' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
