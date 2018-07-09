@@ -1,14 +1,13 @@
 <template lang="pug">
 v-container(grid-list-lg)
-  v-layout(row wrap)
+  v-layout.layout(row wrap)
     food-card(v-for="food in foodList" :food="food" :key="food.name")
-    infinite-loading(ref="infiniteLoading" @infinite="infiniteHandler")
-        span(slot="no-results") 식당이 없어요.
-        span(slot="no-more") 끝 :)
+  infinite-loading.load(ref="infiniteLoading" @infinite="infiniteHandler")
+    span(slot="no-results") 식당이 없어요.
+    span(slot="no-more") 끝 :)
 </template>
 
 <script>
-import InfiniteLoading from 'vue-infinite-loading/src/components/InfiniteLoading.vue'
 import FoodCard from '@/components/FoodCard'
 
 export default {
@@ -18,10 +17,16 @@ export default {
       if (!store.getters.foodTypes[type]) {
         const foods = await app.$axios.$get(`/public/type/${encodeURIComponent(type)}`)
         console.log('load type food from server')
+        console.log(foods)
         store.commit('setFoodTypes', { type, foods })
       }
     } catch (e) {
       console.log(e)
+    }
+  },
+  data () {
+    return {
+      page: 0
     }
   },
   computed: {
@@ -67,13 +72,13 @@ export default {
     }
   },
   components: {
-    InfiniteLoading,
     FoodCard
   }
 }
 </script>
 
 <style scoped>
-
-
+.layout {
+  min-height: 10px;
+}
 </style>

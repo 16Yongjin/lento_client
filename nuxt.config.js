@@ -17,7 +17,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
-  plugins: ['~/plugins/vuetify.js', '~/plugins/vue-google-maps.js'],
+  plugins: ['~/plugins/vuetify.js', '~/plugins/vue-google-maps.js', { src: '~/plugins/vue-infinite-loading.js', ssr: false }],
   css: [
     '~/assets/style/app.styl'
   ],
@@ -42,6 +42,7 @@ module.exports = {
     vendor: [
       '~/plugins/vuetify.js',
       '~/plugins/vue-google-maps.js',
+      '~/plugins/vue-infinite-loading.js',
       'axios'
     ],
     extractCSS: true,
