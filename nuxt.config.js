@@ -6,7 +6,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: '한국외대 주변 식당',
+    title: '한국외대 주변 맛집',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -26,6 +26,9 @@ module.exports = {
     ['@nuxtjs/google-adsense', {
       id: 'ca-pub-9040837646422745',
       pageLevelAds: true
+    }],
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-122016348-1'
     }]],
   axios: { baseURL: 'https://api.lento.in' },
   /*
