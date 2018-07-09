@@ -21,7 +21,12 @@ module.exports = {
   css: [
     '~/assets/style/app.styl'
   ],
-  modules: ['@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/axios',
+    ['@nuxtjs/google-adsense', {
+      id: 'ca-pub-9040837646422745',
+      pageLevelAds: true
+    }]],
   axios: { baseURL: 'https://api.lento.in' },
   /*
   ** Customize the progress bar color
