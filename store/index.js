@@ -1,6 +1,6 @@
 export const state = () => ({
   sidebar: false,
-  dark: (new Date()).getHours() >= 17,
+  dark: ((date) => date >= 17 || date <= 5)((new Date()).getHours()),
   title: '외대 주변 식당',
   mainFoods: []
 })

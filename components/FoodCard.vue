@@ -1,5 +1,5 @@
 <template lang="pug">
-v-flex(xs12 sm6 md3)
+v-flex(xs12 sm6 md4 lg3)
   v-card(:to="`/foods/${food._id}`" :height="cardHeight")
     v-card-title(primary-title)
       div.title(v-text="food.name")

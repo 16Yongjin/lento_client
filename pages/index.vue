@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-container(grid-list-lg fluid)
+  v-container(grid-list-lg)
     v-layout(row wrap)
       v-flex(xs12)
         h3.display-2.keep-line
