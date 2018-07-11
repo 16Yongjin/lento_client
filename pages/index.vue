@@ -1,10 +1,10 @@
 <template lang="pug">
-  v-container(grid-list-lg)
+  v-container(grid-list-lg fluid)
     v-layout(row wrap)
       v-flex(xs12)
         h3.display-2.keep-line
           | 한국외대 😋
-          | 주변식당 🍽
+          | 주변맛집 🍽
         v-divider.my-3
       v-flex(xs12)
         h2 음식종류
@@ -36,7 +36,8 @@ export default {
   },
   computed: {
     foods () {
-      return [ [ '🍚 한식', 'b82nalfx21n.jpeg', 74 ],
+      return [
+        [ '🍚 한식', 'b82nalfx21n.jpeg', 73 ],
         [ '🍝 양식', 'xs4lleaqxe.jpg', 30 ],
         [ '🍣 일식', 'qqh0cna7led.jpg', 12 ],
         [ '🍜 분식', 'w0irrvhgyds.jpeg', 10 ],

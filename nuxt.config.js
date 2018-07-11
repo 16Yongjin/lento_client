@@ -38,6 +38,9 @@ module.exports = {
   /*
   ** Build configuration
   */
+  // router: {
+  //   middleware: ['type-redirect']
+  // },
   build: {
     vendor: [
       '~/plugins/vuetify.js',

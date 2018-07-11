@@ -2,9 +2,7 @@ export const state = () => ({
   sidebar: false,
   dark: (new Date()).getHours() >= 17,
   title: '외대 주변 식당',
-  mainFoods: [],
-  foodTypes: {},
-  typedFoodList: []
+  mainFoods: []
 })
 
 export const mutations = {

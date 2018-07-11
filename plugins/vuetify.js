@@ -9,7 +9,8 @@ import {
   VToolbar,
   VDialog,
   VCheckbox,
-  VDivider
+  VDivider,
+  VPagination
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -22,7 +23,8 @@ Vue.use(Vuetify, {
     VToolbar,
     VDialog,
     VCheckbox,
-    VDivider
+    VDivider,
+    VPagination
   },
   theme: {
     primary: '#90CAF9',
